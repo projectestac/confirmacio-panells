@@ -1,0 +1,6 @@
+# Data files
+upload/
+!upload/config.json
+!upload/index.html
+
+

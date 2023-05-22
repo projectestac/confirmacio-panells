@@ -1,0 +1,4 @@
+Per posar els codis de centre entre cometes, amb el GEdit, cercar i substituir expressió regular:
+
+Cerca: ^\d{8}
+Substitueix: "\0"

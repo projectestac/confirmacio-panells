@@ -1,0 +1,79 @@
+{
+  "name": "necessitats-aules-digitals",
+  "title": "Selecció d'equipament per a la digitalització d'aules",
+  "version": "1.0.0",
+  "description": "Confirmació de les necessitats d'equipament digital de les aules de les escoles de Catalunya",
+  "main": "src/index.js",
+  "keywords": [
+    "forms",
+    "education",
+    "educació",
+    "react",
+    "javascript",
+    "webcomponents"
+  ],
+  "author": {
+    "name": "Catalan Educational Telematic Network (XTEC)",
+    "email": "info@xtec.cat",
+    "url": "https://xtec.gencat.cat"
+  },
+  "contributors": [
+    {
+      "name": "Francesc Busquets",
+      "email": "francesc@gmail.com",
+      "url": "https://github.com/frncesc"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frncesc/enquesta-panells"
+  },
+  "bugs": {
+    "url": "https://github.com/frncesc/enquesta-panells/issues"
+  },
+  "licenses": [
+    {
+      "type": "EUPL-1.2",
+      "url": "https://spdx.org/licenses/EUPL-1.2.html"
+    }
+  ],
+  "license": "EUPL-1.2",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.0",
+    "@react-oauth/google": "^0.11.0",
+    "@react-pdf/renderer": "^3.1.9",
+    "assert": "^2.0.0",
+    "deep-equal": "^2.2.1",
+    "file-saver": "^2.0.5",
+    "filesize": "^10.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8.40.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prop-types": "^15.8.1",
+    "raw-loader": "^4.0.2",
+    "terser-webpack-plugin": "^5.3.8",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint src/**/*.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist": "> 0.25%, not dead"
+}
