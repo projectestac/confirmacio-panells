@@ -1,6 +1,8 @@
 # Data files
-upload/
-!upload/config.json
-!upload/index.html
+upload/*
+!upload/config.inc.json
+
+# Config files
+/db/config.php
 
 

@@ -14,7 +14,7 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 // ** Path to repository projects ** //
-define('FILES_PATH', '/home/fbusquet/dev/projectestac/enquesta/api/upload');
+define('FILES_PATH', '/path/to/uploaded/files');
 define('FILES_LOG', 'files.log');
 define('SETTINGS_FILE', 'config.json');
 
@@ -35,12 +35,7 @@ define('UID', posix_geteuid());
 
 // Valid origins for userlib clients
 define('VALID_ORIGINS', [
-  'https://clic.xtec.cat',
-  'https://preproduccio.clic.xtec.cat',
   'https://projectes.xtec.cat',
-  'https://agora.xtec.cat',
-  'https://educaciodigital.cat',
   'https://met.xtec.cat',
-  'https://clic.xyz',
   'http://localhost:8000'
 ]);
