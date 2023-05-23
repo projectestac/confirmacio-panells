@@ -116,7 +116,10 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
             if (isset($settings->users)) {
                 foreach ($settings->users as $usr) {
                     if ($usr->id === $email) {
-                        $schoolID = $usr->school;
+                        if(isset($_POST['codi']))
+                            $schoolID = $_POST['codi'];
+                        else
+                            $schoolID = $usr->school;
                         $validUser = true;                        
                         break;
                     }
@@ -144,7 +147,7 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
 
                 if(!$actual) {
                     $result->status = 'error';
-                    $result->error = 'Centre inexistent o no inclòs en la convocatòria';
+                    $result->error = 'El centre '.$schoolID.' no ha de presentar el document de proposta d\'equipaments #ecoDigEdu.';
                     $errMsg = 'Invalid school ID: '.$schoolID;
                 } else {
                     $result->email = $email;

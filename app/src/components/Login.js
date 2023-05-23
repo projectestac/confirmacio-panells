@@ -40,6 +40,13 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
 
   function processOAuthResponse(codeResponse) {
     setLoading(true);
+    
+    const queryParams = { id_token: codeResponse.access_token, /* NEW_API: true, */ };
+    const locationParams = new URLSearchParams(window.location.search);
+    const codi = locationParams.get('codi') || null;
+    if (codi)
+      queryParams.codi = codi;
+
     fetch(`${apiEndPoint}/getSchoolData.php`, {
       method: 'POST',
       mode: 'cors',
@@ -49,7 +56,7 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
         'Accept': 'application/json',
       },
-      body: new URLSearchParams({ id_token: codeResponse.access_token, /* NEW_API: true, */ }),
+      body: new URLSearchParams(queryParams),
     })
       .then(checkFetchResponse)
       .then(data => {
