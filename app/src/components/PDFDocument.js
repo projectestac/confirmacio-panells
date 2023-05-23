@@ -196,7 +196,7 @@ export default function PDFDocument({ schoolData, settings }) {
   );
 }
 
-export function PDFDocumentVithViewer({ settings, schoolData, setSchoolData, handleNext, handleBack, width = '100%', height = 1100 }) {
+export function PDFDocumentVithViewer({ settings, schoolData, setSchoolData, handleNext, handleBack, width = '100%', height = 1200 }) {
   const { msg } = settings;
   const { resposta } = schoolData;
 

@@ -98,7 +98,7 @@ function Main({ settings }) {
 
   return (
     <>
-      <Box sx={{ maxWidth: '800px', my: 2 }} ref={rootRef} >
+      <Box sx={{ maxWidth: '1200px', my: 2 }} ref={rootRef} >
         {
           loading && <Loading {...{ settings }} /> ||
           <div>
