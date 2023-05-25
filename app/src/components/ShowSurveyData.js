@@ -29,13 +29,16 @@
  */
 
 import React from 'react';
-import { Box, Alert, Table, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+import { Box, Alert, Table, TableHead, TableRow, TableCell, TableBody, Typography, Link } from '@mui/material';
 
-export default function ShowSurveyData({ schoolData: { actual: data }, settings: { msg } }) {
+export default function ShowSurveyData({ schoolData, settings }) {
+
+  const { msg, contactAddress } = settings;
+  const { actual } = schoolData;
 
   return (
-    <Box>
-      {!data.enquesta &&
+    <Box sx={{ my: 2, p: 2 }}>
+      {!actual.enquesta &&
         // School did not participate in the survey
         <Alert severity="warning">{msg.schoolNoSurvey}</Alert>
         ||
@@ -46,9 +49,9 @@ export default function ShowSurveyData({ schoolData: { actual: data }, settings:
               <TableRow><TableCell>{msg.existingPanels}</TableCell><TableCell align='right'>{msg.pluralize('units', 2)}</TableCell></TableRow>
             </TableHead>
             <TableBody>
-              <TableRow><TableCell>{msg.pDepartament}</TableCell><TableCell align='right'>{data.pDepartament}</TableCell></TableRow>
-              <TableRow><TableCell>{msg.pAltres}</TableCell><TableCell align='right'>{data.pAltres}</TableCell></TableRow>
-              <TableRow><TableCell>{msg.pTotalActual}</TableCell><TableCell align='right'>{data.pTotal}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.pDepartament}</TableCell><TableCell align='right'>{actual.pDepartament}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.pAltres}</TableCell><TableCell align='right'>{actual.pAltres}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.pTotalActual}</TableCell><TableCell align='right'>{actual.pTotal}</TableCell></TableRow>
             </TableBody>
           </Table>
           <Table sx={{ my: 2 }} size="small">
@@ -56,10 +59,10 @@ export default function ShowSurveyData({ schoolData: { actual: data }, settings:
               <TableRow><TableCell>{msg.requestedPanels}</TableCell><TableCell align='right'>{msg.pluralize('units', 2)}</TableCell></TableRow>
             </TableHead>
             <TableBody>
-              <TableRow><TableCell>{msg.p75paret}</TableCell><TableCell align='right'>{data.e75paret}</TableCell></TableRow>
-              <TableRow><TableCell>{msg.p75rodes}</TableCell><TableCell align='right'>{data.e75rodes}</TableCell></TableRow>
-              <TableRow><TableCell>{msg.p65paret}</TableCell><TableCell align='right'>{data.e65paret}</TableCell></TableRow>
-              <TableRow><TableCell>{msg.p65rodes}</TableCell><TableCell align='right'>{data.e65rodes}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.p75paret}</TableCell><TableCell align='right'>{actual.e75paret}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.p75rodes}</TableCell><TableCell align='right'>{actual.e75rodes}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.p65paret}</TableCell><TableCell align='right'>{actual.e65paret}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.p65rodes}</TableCell><TableCell align='right'>{actual.e65rodes}</TableCell></TableRow>
             </TableBody>
           </Table>
           <Table sx={{ my: 2 }} size="small">
@@ -67,12 +70,13 @@ export default function ShowSurveyData({ schoolData: { actual: data }, settings:
               <TableRow><TableCell>{msg.requestedSupports}</TableCell><TableCell align='right'>{msg.pluralize('units', 2)}</TableCell></TableRow>
             </TableHead>
             <TableBody>
-              <TableRow><TableCell>{msg.srFixes}</TableCell><TableCell align='right'>{data.srFixes}</TableCell></TableRow>
-              <TableRow><TableCell>{msg.srRodes}</TableCell><TableCell align='right'>{data.srRodes}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.srFixes}</TableCell><TableCell align='right'>{actual.srFixes}</TableCell></TableRow>
+              <TableRow><TableCell>{msg.srRodes}</TableCell><TableCell align='right'>{actual.srRodes}</TableCell></TableRow>
             </TableBody>
           </Table>
         </>
       }
+      <Typography component="div" variant="body2"><Box component="span" sx={{ fontWeight: 'bold' }}>{msg.note}</Box> {msg.pAltresNota} <Link href={`mailto:${contactAddress}`}>{contactAddress}</Link></Typography>
     </Box>
   );
 }

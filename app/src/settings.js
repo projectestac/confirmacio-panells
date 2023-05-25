@@ -94,17 +94,6 @@ export const DEFAULT_THEME = {
         },
       }
     },
-    'MuiTablePagination': {
-      styleOverrides: {
-        spacer: {
-          display: 'none',
-        },
-        toolbar: {
-          flexFlow: 'wrap',
-          paddingLeft: '0 !important',
-        },
-      }
-    }
   },
 };
 
@@ -132,6 +121,8 @@ export const DEFAULT_SETTINGS = {
   elementKeys: ['armGrans', 'armPetits', 'tablets', 'visDoc', 'altaveus'],
   // Credits required for each complementary element
   creditsPerElement: process.env.CREDITS_PER_ELEMENT ? JSON.parse(process.env.CREDITS_PER_ELEMENT) : { armGrans: 100, armPetits: 70, tablets: 25, visDoc: 70, altaveus: 30 },
+  // Contact address
+  contactAddress: process.env.CONTACT_ADDRESS || 'culturadigital+panells@xtec.cat',
 };
 
 export function useSettings(settings = DEFAULT_SETTINGS) {

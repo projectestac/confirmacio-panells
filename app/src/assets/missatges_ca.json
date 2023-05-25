@@ -16,6 +16,7 @@
   "draftSaved": "No hi ha canvis pendents de desar",
   "next": "Següent",
   "back": "Anterior",
+  "note": "NOTA:",
   "loginInfo": "Sessió iniciada com a:",
   "loginPrompt": "Inicieu la sessió amb l'identificador XTEC.CAT del vostre centre educatiu",
   "login": "Inicia la sessió",
@@ -45,6 +46,7 @@
   "pDepartament": "Panells ja dotats pel Departament",
   "pAltres": "Panells d'altres orígens",
   "pTotalActual": "Panells actualment existents al centre",
+  "pAltresNota": "El nombre de panells digitals existents al centre condiciona els crèdits disponibles per a elements complementaris. En cas que aquest nombre hagués canviat respecte al que es va indicar a l'enquesta de 2022, escriviu un missatge a l'adreça: ",
   "p75paret": "Panells de 75\" penjats a la paret",
   "p75rodes": "Panells de 75\" amb rodes",
   "p65paret": "Panells de 65\" penjats a la paret",
@@ -114,8 +116,8 @@
   "completedTitle": "La proposta s'ha enviat correctament",
   "completedDescription": "El centre {{ID}} {{NAME}} ja ha fet l'enviament de la proposta de digitalització d'aules.",
   "completedDetails": "La proposta signada per \"{{SIGNEDBY}}\" es va trametre el {{DATE}} a les {{TIME}}.",
-  "completedReset": "En cas que hàgiu de fer alguna modificació a la proposta, anul·leu la tramesa i torneu a començar.",
-  "completedDownloadPDF": "Descarrega una còpia de la proposta tramesa",
+  "completedReset": "En cas que vulgueu de fer alguna modificació a la proposta, anul·leu la tramesa i torneu a començar.",
+  "completedDownloadPDF": "Descarrega una còpia del document enviat",
   "resetButton": "Anul·la la tramesa",
   "resetWarning": "Segur que voleu anul·lar la tramesa? Si responeu afirmativament haureu de generar un nou document, signar-lo digitalment i enviar-lo."
 }

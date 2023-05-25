@@ -39,15 +39,15 @@ export default function Completed({ settings, schoolData, handleReset }) {
   const t = new Date(resposta.dataFitxer * 1000);
 
   return (
-    <Card>
+    <Card sx={{ my: 2, p: 2 }}>
       <CardContent sx={{ "& *": { mb: 2 } }}>
         <Typography>{msg.replace('completedDescription', { ID: actual.id, NAME: actual.nom })}</Typography>
         <Typography>{msg.replace('completedDetails', { SIGNEDBY: resposta.signatPer, DATE: t.toLocaleDateString(), TIME: t.toLocaleTimeString() })}</Typography>
         <Typography>{msg.completedReset}</Typography>
       </CardContent>
-      <CardActions sx={{ justifyContent: 'space-between' }}>
+      <CardActions sx={{ justifyContent: 'space-between', mb: 1 }}>
         <Button href={`${apiEndPoint}/downloadFile.php`} variant="contained" startIcon={<DownloadIcon />}>{msg.completedDownloadPDF}</Button>
-        <Link sx={{ mr: 2 }} component="button" variant="body2" onClick={handleReset}>{msg.resetButton}</Link>
+        <Link sx={{ alignSelf: 'end' }} component="button" variant="body2" onClick={handleReset}>{msg.resetButton}</Link>
       </CardActions>
     </Card>
   );
