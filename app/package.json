@@ -1,7 +1,7 @@
 {
   "name": "necessitats-aules-digitals",
   "title": "Selecció d'equipament per a la digitalització d'aules",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Confirmació de les necessitats d'equipament digital de les aules de les escoles de Catalunya",
   "main": "src/index.js",
   "keywords": [
@@ -65,7 +65,7 @@
     "prop-types": "^15.8.1",
     "raw-loader": "^4.0.2",
     "terser-webpack-plugin": "^5.3.9",
-    "webpack": "^5.83.1",
+    "webpack": "^5.84.0",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
   },

@@ -35,7 +35,7 @@ import { Card, CardHeader, CardContent, CardActions, Button } from '@mui/materia
 import DownloadIcon from '@mui/icons-material/Download';
 // import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import logo from '../assets/logo.png';
+import logo from '../assets/edu.jpg';
 import logosMRR from '../assets/logosMRR.png';
 
 // Create styles
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     marginBottom: 2,
   },
   image: {
-    maxWidth: 220,
+    maxWidth: 200,
   },
   title: {
     fontFamily: 'Helvetica-Bold',
