@@ -29,8 +29,8 @@
  */
 
 import React, { useState } from 'react';
-import { Button, LinearProgress, Box, Typography, Card, CardHeader, CardContent, CardActions } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Button, LinearProgress, Box, Typography, Card, CardContent, CardActions } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import { filesize } from 'filesize';
@@ -106,7 +106,6 @@ export default function UploadPDF({ settings, schoolData, setSchoolData, alertDl
 
   return (
     <Card>
-      <CardHeader title={msg.uploadDialogTitle} />
       <CardContent sx={{ "& > *": { my: 2 } }}>
         <Typography sx={{ mb: 2 }}>{msg.uploadDialogMsg}</Typography>
         {!file &&
@@ -143,8 +142,7 @@ export default function UploadPDF({ settings, schoolData, setSchoolData, alertDl
         }
       </CardContent>
       <CardActions>
-        <Button variant="outlined" onClick={handleBack} startIcon={<ArrowBackIcon />}>{msg.back}</Button>
-        {/* <Button variant="contained" onClick={handleNext} endIcon={<ArrowForwardIcon />}>Següent (a eliminar!)</Button> */}
+        <Button variant="outlined" onClick={handleBack} startIcon={<ArrowUpwardIcon />}>{msg.back}</Button>
       </CardActions>
     </Card >
   );

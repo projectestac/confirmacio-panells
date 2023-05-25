@@ -114,9 +114,8 @@
   "completedTitle": "La proposta s'ha enviat correctament",
   "completedDescription": "El centre {{ID}} {{NAME}} ja ha fet l'enviament de la proposta de digitalització d'aules.",
   "completedDetails": "La proposta signada per \"{{SIGNEDBY}}\" es va trametre el {{DATE}} a les {{TIME}}.",
-  "completedDownloadPDF": "Si necessiteu una còpia del document que heu enviat, feu clic en ",
-  "completedDownloadLink": "aquest enllaç",
   "completedReset": "En cas que hàgiu de fer alguna modificació a la proposta, anul·leu la tramesa i torneu a començar.",
+  "completedDownloadPDF": "Descarrega una còpia de la proposta tramesa",
   "resetButton": "Anul·la la tramesa",
   "resetWarning": "Segur que voleu anul·lar la tramesa? Si responeu afirmativament haureu de generar un nou document, signar-lo digitalment i enviar-lo."
 }

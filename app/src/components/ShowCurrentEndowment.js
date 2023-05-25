@@ -29,8 +29,8 @@
  */
 
 import React from 'react';
-import { Table, TableRow, TableCell, TableHead, TableBody, Card, CardContent, CardActions, CardHeader, Button, TextField } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Table, TableRow, TableCell, TableHead, TableBody, Card, CardContent, CardActions, Button, TextField } from '@mui/material';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ShowSurveyData from './ShowSurveyData';
 
 export default function ShowCurrentEndowment({ schoolData, setSchoolData, settings, setWarning, alertDlg, handleNext, saveButton }) {
@@ -113,7 +113,6 @@ export default function ShowCurrentEndowment({ schoolData, setSchoolData, settin
 
   return (
     <Card sx={{ my: 2, p: 2 }}>
-      <CardHeader title={msg.schoolEndowment} />
       <CardContent>
         <Table size="small">
           <TableHead>
@@ -171,7 +170,7 @@ export default function ShowCurrentEndowment({ schoolData, setSchoolData, settin
       <CardActions sx={{ justifyContent: 'space-between' }}>
         <span />
         {saveButton}
-        <Button variant="outlined" onClick={() => checkChanges() && handleNext()} endIcon={<ArrowForwardIcon />}>{msg.next}</Button>
+        <Button variant="outlined" onClick={() => checkChanges() && handleNext()} startIcon={<ArrowDownwardIcon />}>{msg.next}</Button>
       </CardActions>
     </Card>
   );

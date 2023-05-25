@@ -83,6 +83,17 @@ export const DEFAULT_THEME = {
     }
   },
   components: {
+    'MuiStepLabel': {
+      styleOverrides: {
+        label: {
+          fontSize: '1.3rem',
+          '&.Mui-disabled': {
+            color: '#1976d2',
+            fontWeight: 500,
+          }
+        },
+      }
+    },
     'MuiTablePagination': {
       styleOverrides: {
         spacer: {

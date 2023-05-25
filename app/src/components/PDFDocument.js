@@ -31,10 +31,9 @@
 import React from 'react';
 import { saveAs } from 'file-saver';
 import { pdf, Page, Text, View, Document, Image, StyleSheet, PDFViewer } from '@react-pdf/renderer';
-import { Card, CardHeader, CardContent, CardActions, Button } from '@mui/material';
+import { Card, CardContent, CardActions, Button } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
-// import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import logo from '../assets/edu.jpg';
 import logosMRR from '../assets/logosMRR.png';
 
@@ -211,14 +210,12 @@ export function PDFDocumentVithViewer({ settings, schoolData, setSchoolData, han
 
   return (
     <Card sx={{ my: 2, p: 2 }}>
-      <CardHeader title={msg.printPdf} />
       <CardContent>
         <PDFViewer {...{ width, height }}>{docElement}</PDFViewer>
       </CardContent>
       <CardActions sx={{ mt: 2, justifyContent: 'space-between' }}>
-        <Button variant="outlined" onClick={handleBack} startIcon={<ArrowBackIcon />}>{msg.back}</Button>
+        <Button variant="outlined" onClick={handleBack} startIcon={<ArrowUpwardIcon />}>{msg.back}</Button>
         <Button variant="contained" onClick={downloadPDFDocument} startIcon={<DownloadIcon />}>{msg.downloadPDF}</Button>
-        {/* <Button variant="outlined" onClick={handleNext} endIcon={<ArrowForwardIcon />}>{msg.next}</Button> */}
       </CardActions>
     </Card>
   );

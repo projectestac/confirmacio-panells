@@ -30,8 +30,8 @@
 
 import React from 'react';
 import { Alert, AlertTitle, Card, CardHeader, CardContent, CardActions, Button, Table, TableBody, TableHead, TableRow, TableCell, TextField, Typography } from '@mui/material';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 export default function SelectComplementary({ schoolData, setSchoolData, settings, alertDlg, warning, setWarning, handleNext, handleBack, saveButton }) {
 
@@ -70,7 +70,6 @@ export default function SelectComplementary({ schoolData, setSchoolData, setting
   return (
     <Card sx={{ my: 2, p: 2 }}>
       <CardHeader
-        title={msg.selectFromCatalog}
         subheader={msg.selectFromCatalogSubtitle}
       />
       <CardContent sx={{ pb: 0 }}>
@@ -107,9 +106,9 @@ export default function SelectComplementary({ schoolData, setSchoolData, setting
         </> || null}
       </CardContent>
       <CardActions sx={{ mt: 2, justifyContent: 'space-between' }}>
-        <Button variant="outlined" onClick={handleBack} startIcon={<ArrowBackIcon />}>{msg.back}</Button>
+        <Button variant="outlined" onClick={handleBack} startIcon={<ArrowUpwardIcon />}>{msg.back}</Button>
         {saveButton}
-        <Button variant="outlined" onClick={handleNext} endIcon={<ArrowForwardIcon />}>{msg.next}</Button>
+        <Button variant="outlined" onClick={handleNext} startIcon={<ArrowDownwardIcon />}>{msg.next}</Button>
       </CardActions>
     </Card>
   );

@@ -29,9 +29,8 @@
  */
 
 import React from 'react';
-import { Card, CardHeader, CardContent, CardActions, Typography, Button } from '@mui/material';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import PlaylistAddCheckIcon from '@mui/icons-material/PlaylistAddCheck';
+import { Card, CardContent, CardActions, Typography, Button, Link } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 
 export default function Completed({ settings, schoolData, handleReset }) {
 
@@ -39,19 +38,16 @@ export default function Completed({ settings, schoolData, handleReset }) {
   const { actual, resposta } = schoolData;
   const t = new Date(resposta.dataFitxer * 1000);
 
-  // TODO: set download link!
-
   return (
     <Card>
-      <CardHeader title={<><PlaylistAddCheckIcon sx={{mr: '10px', mb: '-3px'}}/>{msg.completedTitle}</>} />
-      <CardContent sx={{"& *": {mb: 2}}}>
+      <CardContent sx={{ "& *": { mb: 2 } }}>
         <Typography>{msg.replace('completedDescription', { ID: actual.id, NAME: actual.nom })}</Typography>
         <Typography>{msg.replace('completedDetails', { SIGNEDBY: resposta.signatPer, DATE: t.toLocaleDateString(), TIME: t.toLocaleTimeString() })}</Typography>
-        <Typography>{msg.completedDownloadPDF} <a href={`${apiEndPoint}/downloadFile.php`} target="_blank" rel="noreferrer">{msg.completedDownloadLink}</a>.</Typography>
         <Typography>{msg.completedReset}</Typography>
       </CardContent>
-      <CardActions>
-        <Button variant="outlined" onClick={handleReset} startIcon={<DeleteForeverIcon sx={{ mb: '3px' }} />}>{msg.resetButton}</Button>
+      <CardActions sx={{ justifyContent: 'space-between' }}>
+        <Button href={`${apiEndPoint}/downloadFile.php`} variant="contained" startIcon={<DownloadIcon />}>{msg.completedDownloadPDF}</Button>
+        <Link sx={{ mr: 2 }} component="button" variant="body2" onClick={handleReset}>{msg.resetButton}</Link>
       </CardActions>
     </Card>
   );
