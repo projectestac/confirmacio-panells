@@ -2,3 +2,6 @@ Per posar els codis de centre entre cometes, amb el GEdit, cercar i substituir e
 
 Cerca: ^\d{8}
 Substitueix: "\0"
+
+També s'ha de substituir "TRUE" per 1 i "FALSE" per 0
+
