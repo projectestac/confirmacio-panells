@@ -99,7 +99,7 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
             // Invalid token!
             $result->error = 'Validació incorrecta';
             $result->status = 'error';
-            $errmsg = ' No email in user data';
+            $errMsg = ' No email in user data';
         } else {       
             // Check if user is valid and load email
             $email = $user->email;
@@ -109,7 +109,6 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
             $hd = getAttr($user, 'hd', null);
             if ($hd === HD && preg_match('/[abcd]\d{7}/', $email) === 1) {
                 $schoolID = chr(ord($email)-49).substr($email,1,7);
-                // TODO: Check if it's a valid school
                 $validUser = true;
             }
        
@@ -129,7 +128,7 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
             if ($validUser !== true) {
                 // Unathorized
                 $result->status = 'error';
-                $result->error = 'Usuari no autoritzat';
+                $result->error = 'L\'identificador "'.$email.'" no correspon a cap centre educatiu. Heu d\'iniciar sessió amb l\'identificador XTEC de centre (lletra minúscula seguida de set dígits numèrics i "@xtec.cat")';
                 $errMsg = 'User email: '.$email;
             }
             /* TODO: Check if token is expired (use new API from Google)
@@ -200,11 +199,13 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
 
         // Set response headers and content
         header('Content-Type: application/json;charset=UTF-8');
-        print json_encode($result);
+        echo json_encode($result);
     } catch (Exception $e) {
         // Internal error
-        http_response_code(500);
-        print 'Internal error: '.$e->getMessage();
+	http_response_code(500);
+	$result->status = 'error';
+	$result->error = 'Error del servidor: '.$e->getMessage();
+	echo json_encode($result);
         logMsg('ERR-LOGIN', $e->getMessage().' '.$errMsg);
     }
 } else {
