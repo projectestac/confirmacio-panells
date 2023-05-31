@@ -211,7 +211,7 @@ export function PDFDocumentVithViewer({ settings, schoolData, setSchoolData, han
   return (
     <Card sx={{ my: 2, p: 2 }}>
       <CardContent>
-        <PDFViewer {...{ width, height }}>{docElement}</PDFViewer>
+        <PDFViewer {...{ width, height, showToolbar: false }}>{docElement}</PDFViewer>
       </CardContent>
       <CardActions sx={{ mt: 2, justifyContent: 'space-between' }}>
         <Button variant="outlined" onClick={handleBack} startIcon={<ArrowUpwardIcon />}>{msg.back}</Button>

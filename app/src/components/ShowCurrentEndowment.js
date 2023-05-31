@@ -122,7 +122,7 @@ export default function ShowCurrentEndowment({ schoolData, setSchoolData, settin
               <TableCell align='right'>{msg.endowedPanelsProposed}</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody sx={{ '& input': { maxWidth: '30pt' } }}>
+          <TableBody sx={{ '& input': { maxWidth: '30pt' }, '& td:first-of-type + td': {color: 'GrayText'} }}>
             <TableRow>
               <TableCell>{msg.p75paret}</TableCell>
               <TableCell align='right'>{actual.a75paret}</TableCell>

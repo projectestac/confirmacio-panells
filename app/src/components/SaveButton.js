@@ -41,7 +41,7 @@ export default function SaveButton({ settings, saveResponse, modified, updating 
     <Button
       onClick={() => saveResponse()}
       disabled={updating || !modified}
-      variant={modified ? "contained" : "outlined"}
+      variant={modified ? 'contained' : 'text'}
       startIcon={modified ? <SaveAltIcon /> : updating ? <SyncIcon /> : <DoneIcon />}
     >
       {modified ? msg.saveDraft : updating ? msg.updatingDraft : msg.draftSaved}

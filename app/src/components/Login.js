@@ -32,6 +32,7 @@ import React from 'react';
 import { useGoogleLogin, googleLogout } from '@react-oauth/google';
 import { Button, Avatar, Card, CardHeader, CardActions, Alert } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { red } from '@mui/material/colors';
 import { checkFetchResponse } from '../utils';
 
@@ -101,14 +102,14 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
             subheader={`${schoolData.actual.municipi} (${schoolData.actual.sstt})`}
           />
           <CardActions>
-            <Button onClick={logout} ref={logoutRef} >{msg.logout}</Button>
+            <Button onClick={logout} variant="outlined" ref={logoutRef} startIcon={<LogoutIcon />}>{msg.logout}</Button>
           </CardActions>
         </> ||
         <>
           <CardHeader
             title={msg.loginPrompt}
             subheader={<>
-              <Alert sx={{ my: 1 }} severity="info">{msg.loginWarn1}</Alert>
+              <Alert sx={{ my: 2 }} severity="info">{msg.loginWarn1}</Alert>
               <Alert severity="warning">{msg.loginWarn2}</Alert>
             </>}
           />

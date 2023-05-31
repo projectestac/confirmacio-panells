@@ -40,7 +40,7 @@ export default function ShowSurveyData({ schoolData, settings }) {
     <Box sx={{ my: 2, p: 2 }}>
       {!actual.enquesta &&
         // School did not participate in the survey
-        <Alert severity="warning">{msg.schoolNoSurvey}</Alert>
+        <Alert sx={{ my: 2 }} severity="warning">{msg.schoolNoSurvey}</Alert>
         ||
         // School participated in the survey
         <>
