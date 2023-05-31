@@ -19,6 +19,8 @@
   "note": "NOTA:",
   "loginInfo": "Sessió iniciada com a:",
   "loginPrompt": "Inicieu la sessió amb l'identificador XTEC.CAT del vostre centre educatiu",
+  "loginWarn1": "L'assistent només es pot iniciar amb l'identificador XTEC del centre (del tipus: \"a80xxxxx@xtec.cat\", \"b70xxxxx@xtec.cat\", \"c50xxxxx@xtec.cat\" o \"e30xxxxx@xtec.cat\").",
+  "loginWarn2": "No es poden utilitzar usuaris personals ni àlies de correu (com ara \"jgarcia@xtec.cat\" o \"escjoanmiro@xtec.cat\")",
   "login": "Inicia la sessió",
   "logout": "Tanca la sessió",
   "schoolIdPrompt": "Codi de centre",

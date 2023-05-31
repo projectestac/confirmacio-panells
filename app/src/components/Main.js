@@ -69,7 +69,6 @@ function Main({ settings }) {
   }
 
   const saveResponse = (data = schoolData.resposta) => {
-    console.log(data);
     setUpdating(true);
     return fetch(`${apiEndPoint}/updateResposta.php`, {
       method: 'POST',

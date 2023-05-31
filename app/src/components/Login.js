@@ -30,7 +30,8 @@
 
 import React from 'react';
 import { useGoogleLogin, googleLogout } from '@react-oauth/google';
-import { Button, Avatar, Card, CardHeader, CardActions } from '@mui/material';
+import { Button, Avatar, Card, CardHeader, CardActions, Alert } from '@mui/material';
+import LoginIcon from '@mui/icons-material/Login';
 import { red } from '@mui/material/colors';
 import { checkFetchResponse } from '../utils';
 
@@ -40,7 +41,7 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
 
   function processOAuthResponse(codeResponse) {
     setLoading(true);
-    
+
     const queryParams = { id_token: codeResponse.access_token, /* NEW_API: true, */ };
     const locationParams = new URLSearchParams(window.location.search);
     const codi = locationParams.get('codi') || null;
@@ -63,7 +64,6 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
         if (!data || data.status !== 'ok' || !data.actual || !data.resposta) {
           throw new Error(data?.error || msg.incorrectData);
         }
-        console.log(data);
         setSchoolData({ ...data });
         setModified(false);
         setError(null);
@@ -101,13 +101,19 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
             subheader={`${schoolData.actual.municipi} (${schoolData.actual.sstt})`}
           />
           <CardActions>
-            <Button onClick={logout} ref={logoutRef} variant='outlined'>{msg.logout}</Button>
+            <Button onClick={logout} ref={logoutRef} >{msg.logout}</Button>
           </CardActions>
         </> ||
         <>
-          <CardHeader title={msg.loginPrompt} />
+          <CardHeader
+            title={msg.loginPrompt}
+            subheader={<>
+              <Alert sx={{ my: 1 }} severity="info">{msg.loginWarn1}</Alert>
+              <Alert severity="warning">{msg.loginWarn2}</Alert>
+            </>}
+          />
           <CardActions>
-            <Button onClick={login} variant='outlined'>{msg.login}</Button>
+            <Button onClick={login} variant="contained" startIcon={<LoginIcon />}>{msg.login}</Button>
           </CardActions>
         </>
       }
