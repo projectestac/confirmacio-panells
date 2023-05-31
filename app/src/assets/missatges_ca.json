@@ -62,7 +62,7 @@
   "schoolGroupsDescription": "El nombre màxim d'aules a digitalitzar es calcula a partir del nombre de grups oficials de matrícula d'estudis reglats del curs 2022/23, ajustat amb variables com ara el nombre de grups que comparteixen les mateixes aules (grups d'FP i batxillerat diürn i nocturn, altres estudis no reglats, idiomes, etc.)",
   "pDepartamentDescription": "Les aules actualment equipades amb panells digitals dotats pel Departament no poden rebre dotació de nous panells, però poden ser complementades amb elements del catàleg que es mostra més endavant a raó de 100 punts per aula.",
   "maxPanels": "Nombre màxim de nous panells digitals",
-  "maxPanelsDescription": "El nombre màxim de nous panells digitals es calcula restant del nombre d'aules a digitalitzar els panells ja dotats pel Departament.",
+  "maxPanelsDescription": "El nombre màxim de nous panells digitals es calcula restant els panells ja dotats pel Departament del nombre d'aules a digitalitzar.",
   "maxCredits": "Nombre màxim de crèdits per a elements complementaris",
   "maxCreditsDescription": "El nombre màxim de crèdits es calcula multiplicant per 100 el valor més petit entre les aules a digitalitzar i els panells que el centre ja té, siguin dotats pel Departament o d'altres orígens declarats a l'enquesta de detecció de necessitats del curs 2021-2022. Això és només un màxim: els crèdits finalment assignats dependran del nombre de panells sol·licitats.",
   "maxPanelsError": "Només podeu sol·licitar fins a {{MAX}} panells.",
