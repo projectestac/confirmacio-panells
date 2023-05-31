@@ -69,6 +69,7 @@ try {
     };
 
     // Check the digital signature of the pdf file
+    $matches = [];
     $output = `pdfsig $tmpFilePath`;
     preg_match('/Signer Certificate Common Name: ([^\n]+)/', $output, $matches);
     if (count($matches) < 2) {
@@ -77,8 +78,10 @@ try {
     $signedBy = $matches[1];
 
     // Check the file metadata
+    $matches = [];
     $output = `pdfinfo $tmpFilePath`;
-    preg_match('/^Subject:\s*(.*)$/m', $output, $matches);
+    if($output)
+        preg_match('/^Subject:\s*(.*)$/m', $output, $matches);
     
     if (count($matches) < 2) {
         throw new RuntimeException('Aquest fitxer no conté les metadades necessàries per a ser processat. Pot ser que no s\'hagi generat amb l\'assistent?');

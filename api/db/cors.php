@@ -16,6 +16,9 @@
 
 require_once 'config.php';
 
+// Avoid displaying errors
+ini_set('display_errors', 0);
+
 /**
  * Emits the appropiate Access-Control-Allow-Origin headers for valid origins
  *  
