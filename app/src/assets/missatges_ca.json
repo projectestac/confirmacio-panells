@@ -63,6 +63,8 @@
   "pDepartamentDescription": "Les aules actualment equipades amb panells digitals dotats pel Departament no poden rebre dotació de nous panells, però poden ser complementades amb elements del catàleg que es mostra més endavant a raó de 100 punts per aula.",
   "maxPanels": "Nombre màxim de nous panells digitals",
   "maxPanelsDescription": "El nombre màxim de nous panells digitals es calcula restant del nombre d'aules a digitalitzar els panells ja dotats pel Departament.",
+  "maxCredits": "Nombre màxim de crèdits per a elements complementaris",
+  "maxCreditsDescription": "El nombre màxim de crèdits es calcula multiplicant per 100 el valor més petit entre les aules a digitalitzar i els panells que el centre ja té, siguin dotats pel Departament o d'altres orígens declarats a l'enquesta de detecció de necessitats del curs 2021-2022. Això és només un màxim: els crèdits finalment assignats dependran del nombre de panells sol·licitats.",
   "maxPanelsError": "Només podeu sol·licitar fins a {{MAX}} panells.",
   "maxSupportsDecrementError": "El nombre de panells digitals no pot ser inferior al de suports regulables en altura. Heu de reduir el nombre de suports per reduir el de panells.",
   "maxSupportsIncrementError": "El nombre de suports regulables en altura no pot ser superior al de panells digitals. Heu d'augmentar el nombre de panells per incrementar el de suports.",

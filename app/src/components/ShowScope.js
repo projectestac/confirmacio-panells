@@ -36,6 +36,7 @@ export default function ShowScope({ schoolData, settings }) {
   const { msg } = settings;
   const { actual } = schoolData;
   const maxPanels = Math.max(0, actual.grups - actual.pDepartament);
+  const maxCredits = Math.max(0, Math.min(actual.grups, actual.pTotal)) * 100;
 
   return (
     <Card sx={{ my: 2, p: 2 }}>
@@ -49,6 +50,10 @@ export default function ShowScope({ schoolData, settings }) {
 
           <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{msg.maxPanels}: {maxPanels}</Typography>
           <Typography variant="body2" sx={{ mb: 2 }}>{msg.maxPanelsDescription}</Typography>
+        </> || null}
+        {maxCredits && <>
+          <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{msg.maxCredits}: {maxCredits}</Typography>
+          <Typography variant="body2" sx={{ mb: 2 }}>{msg.maxCreditsDescription}</Typography>
         </> || null}
       </CardContent>
     </Card>
