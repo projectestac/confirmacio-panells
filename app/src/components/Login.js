@@ -110,7 +110,7 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
             title={msg.loginPrompt}
             subheader={<>
               <Alert sx={{ my: 2 }} severity="info">{msg.loginWarn1}</Alert>
-              <Alert severity="warning">{msg.loginWarn2}</Alert>
+              <Alert severity="info">{msg.loginWarn2}</Alert>
             </>}
           />
           <CardActions>
