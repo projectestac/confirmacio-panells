@@ -107,7 +107,7 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
             $schoolID = null;
        
             $hd = getAttr($user, 'hd', null);
-            if ($hd === HD && preg_match('/[abcd]\d{7}/', $email) === 1) {
+            if ($hd === HD && preg_match('/[abce]\d{7}/', $email) === 1) {
                 $schoolID = chr(ord($email)-49).substr($email,1,7);
                 $validUser = true;
             }
