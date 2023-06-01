@@ -65,6 +65,24 @@ function getResposta($dbConn, $schoolID) {
     return $result;
 }
 
+function getRespostes($dbConn, $from) {
+    $result = [];
+    $stmt = $dbConn->prepare('SELECT * FROM `respostes` WHERE timestamp > :from');
+    $stmt->bindValue(':from', $from, PDO::PARAM_STR);
+    $stmt->execute();
+    $respostes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if($respostes) {
+        foreach($respostes as $resposta){
+            // Numerize values            
+            $codi = $resposta['idCentre'];
+            $numerized = json_decode(json_encode($resposta, JSON_NUMERIC_CHECK));
+            $numerized->idCentre = $codi;
+            array_push($result, $numerized);
+        }
+    }
+    return $result;
+}
+
 function addResposta($dbConn, $data) {
     
     global $CAMPS_RESPOSTA;

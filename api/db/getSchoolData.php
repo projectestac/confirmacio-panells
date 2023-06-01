@@ -202,10 +202,10 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
         echo json_encode($result);
     } catch (Exception $e) {
         // Internal error
-	http_response_code(500);
-	$result->status = 'error';
-	$result->error = 'Error del servidor: '.$e->getMessage();
-	echo json_encode($result);
+	    http_response_code(500);
+	    $result->status = 'error';
+	    $result->error = 'Error del servidor: '.$e->getMessage();
+	    echo json_encode($result);
         logMsg('ERR-LOGIN', $e->getMessage().' '.$errMsg);
     }
 } else {

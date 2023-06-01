@@ -39,3 +39,7 @@ define('VALID_ORIGINS', [
   'https://met.xtec.cat',
   'http://localhost:8000'
 ]);
+
+// Secret code used for retrieving data
+define('ID_ACCESS_CODE', 'key');
+define('ACCESS_CODE', 'abc123');
