@@ -72,12 +72,49 @@ function getRespostes($dbConn, $from) {
     $stmt->execute();
     $respostes = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if($respostes) {
-        foreach($respostes as $resposta){
-            // Numerize values            
-            $codi = $resposta['idCentre'];
-            $numerized = json_decode(json_encode($resposta, JSON_NUMERIC_CHECK));
-            $numerized->idCentre = $codi;
-            array_push($result, $numerized);
+        foreach($respostes as $r) {
+
+            // Si ja ha s'ha enviat, llegeix valors de 'metaFitxer'
+            if($r['estat'] === 'ENVIAT')
+                $v = json_decode($r['metaFitxer']);
+            else
+                $v = json_decode(json_encode($r, JSON_NUMERIC_CHECK));
+
+            $row=[];
+            // Push school initial data
+            array_push($row,
+                $r['idCentre'],
+                $r['timestamp'],
+                $r['user'],
+                $r['estat'],
+                $r['grups'],
+                $r['pDepartament'],
+                $r['pAltres'],
+                $r['mad']
+            );
+            // Push meta values        
+            array_push($row,
+                $v->a75paret,
+                $v->a75rodes,
+                $v->a65paret,
+                $v->a65rodes,
+                $v->srFixes,
+                $v->srRodes,
+                $v->armGrans,
+                $v->armPetits,
+                $v->tablets,
+                $v->visDoc,
+                $v->altaveus,
+                $v->comentaris
+            );
+            // Push remaining fields
+            array_push($row,
+                $r['nomFitxer'],
+                $r['dataFitxer'],
+                $r['signatPer']
+            );
+
+            array_push($result, $row);
         }
     }
     return $result;
