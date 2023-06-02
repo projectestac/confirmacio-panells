@@ -112,7 +112,7 @@ export default function ShowCurrentEndowment({ schoolData, setSchoolData, settin
   };
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       <CardContent>
         <Table size="small">
           <TableHead>

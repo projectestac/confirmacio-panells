@@ -93,7 +93,7 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
   };
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       {schoolData &&
         <>
           <CardHeader

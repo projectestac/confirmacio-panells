@@ -209,7 +209,7 @@ export function PDFDocumentVithViewer({ settings, schoolData, setSchoolData, han
   }
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       <CardContent>
         <PDFViewer {...{ width, height, showToolbar: false }}>{docElement}</PDFViewer>
       </CardContent>

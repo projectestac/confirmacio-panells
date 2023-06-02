@@ -68,7 +68,7 @@ export default function SelectComplementary({ schoolData, setSchoolData, setting
   };
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       <CardHeader
         subheader={msg.selectFromCatalogSubtitle}
       />

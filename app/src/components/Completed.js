@@ -39,7 +39,7 @@ export default function Completed({ settings, schoolData, handleReset }) {
   const t = new Date(resposta.dataFitxer * 1000);
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       <CardContent sx={{ "& *": { mb: 2 } }}>
         <Typography>{msg.replace('completedDescription', { ID: actual.id, NAME: actual.nom })}</Typography>
         <Typography>{msg.replace('completedDetails', { SIGNEDBY: resposta.signatPer, DATE: t.toLocaleDateString(), TIME: t.toLocaleTimeString() })}</Typography>

@@ -105,7 +105,7 @@ export default function UploadPDF({ settings, schoolData, setSchoolData, alertDl
   }
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       <CardContent sx={{ "& > *": { my: 2 } }}>
         <Typography sx={{ mb: 2 }}>{msg.uploadDialogMsg}</Typography>
         {!file &&

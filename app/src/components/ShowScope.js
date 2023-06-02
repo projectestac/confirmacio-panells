@@ -39,7 +39,7 @@ export default function ShowScope({ schoolData, settings }) {
   const maxCredits = Math.max(0, Math.min(actual.grups, actual.pTotal)) * 100;
 
   return (
-    <Card sx={{ my: 2, p: 2 }}>
+    <Card sx={{ my: 2, p: 2, backgroundColor: '#fafafa' }}>
       <CardHeader title={msg.replace('scope', { CODI: actual.id })} />
       <CardContent sx={{ pb: 0 }}>
         <Typography variant="body1" sx={{ fontWeight: 'bold' }}>{msg.maxDigitalClassrooms}: {actual.grups}</Typography>
