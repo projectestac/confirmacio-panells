@@ -19,6 +19,9 @@ require_once 'config.php';
 // Avoid displaying errors
 ini_set('display_errors', 0);
 
+// Increment max session lifetime to 2 hours (7.200 seconds)
+ini_set('session.gc_maxlifetime', 7200);
+
 /**
  * Emits the appropiate Access-Control-Allow-Origin headers for valid origins
  *  
