@@ -187,6 +187,31 @@ if (isset($_POST[ID_TOKEN]) && $_POST[ID_TOKEN] !== '') {
                         // Insert record in database
                         addResposta($dbConn, $resposta);
                     }
+
+                    $resposta->grups = $actual->grups;
+                    $resposta->pDepartament = $actual->pDepartament;
+                    $totalPanells = $resposta->a75paret + $resposta->a75rodes + $resposta->a65paret + $resposta->a65rodes;
+                    $maxPanells = $actual->grups - $actual->pDepartament;
+                    $totalPunts = $resposta->armGrans * 100 + $resposta->armPetits * 70 + $resposta->tablets * 25 + $resposta->visDoc * 70 + $resposta->altaveus * 30;
+                    $totalDemanda = $totalPunts + $totalPanells * 100;
+
+                    // Check groups
+                    if($totalPanells > $maxPanells || $totalDemanda > $actual->grups * 100) {
+                        $resposta->a75paret = 0;
+                        $resposta->a75rodes = 0;
+                        $resposta->a65paret = 0;
+                        $resposta->a65rodes = 0;
+                        $resposta->srFixes = 0;
+                        $resposta->srRodes = 0;
+                        $resposta->armGrans = 0;
+                        $resposta->armPetits = 0;
+                        $resposta->tablets = 0;
+                        $resposta->visDoc = 0;
+                        $resposta->altaveus = 0;
+                        $resposta->estat = "OBERT";
+                        $result->msg = "Degut a un ajustament en el càlcul dels grups de matrícula, la proposta enregistrada pel vostre centre s'ha hagut de reiniciar. Si us plau, torneu a indicar les unitats de cada tipus d'element.";
+                    }
+
                     $result->resposta = $resposta;
 
                     // Set session data

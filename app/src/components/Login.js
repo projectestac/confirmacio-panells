@@ -65,6 +65,9 @@ export default function Login({ schoolData, setSchoolData, setError, setLoading,
         if (!data || data.status !== 'ok' || !data.actual || !data.resposta) {
           throw new Error(data?.error || msg.incorrectData);
         }
+        if(data.msg) {
+          alert(data.msg);
+        }
         setSchoolData({ ...data });
         setModified(false);
         setError(null);
